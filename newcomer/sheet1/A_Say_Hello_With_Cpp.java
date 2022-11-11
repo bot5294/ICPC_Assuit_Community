@@ -4,7 +4,7 @@ package newcomer.sheet1;
 
 import java.util.Scanner;
 
-public class Say_Hello_With_Cpp {
+public class A_Say_Hello_With_Cpp {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
