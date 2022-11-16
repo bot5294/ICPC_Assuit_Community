@@ -9,20 +9,21 @@ public class I_Smallest_Pair{
             for(int i=0;i<n;i++){
                 arr[i]=sc.nextInt();
             }
-            int sum=Integer.MAX_VALUE;
+            long sum=arr[0]+arr[1]+1;//Integer.MAX_VALUE;
             for(int i=1;i<=n;i++){
                 for(int j=i+1;j<=n;j++){
                     if(i<j){
-                    int tsum = arr[i-1]+arr[j-1]+j-i;
+                    long tsum = arr[i-1]+arr[j-1]+j-i;
                     // System.out.println(arr[i-1]+" + "+arr[j-1]+" + "+j+"-"+i+" = "+tsum);
                     if(tsum<sum)
                         sum=tsum;
                     }
                 }
             }
-            System.out.print(sum);
+            System.out.println(sum);
             t--;
         }
         sc.close();
     }
 }
+
