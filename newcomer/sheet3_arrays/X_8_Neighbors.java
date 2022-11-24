@@ -11,28 +11,55 @@ public class X_8_Neighbors{
                 arr[i][j]=s.charAt(j);    
             }
         }
-        int r = sc.nextInt();
-        int c =sc.nextInt();
+        int r = sc.nextInt()-1;
+        int c =sc.nextInt()-1;
         boolean hasEightN = true;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(i==r && j==c){
-                    if((i-1>=0 && i+1<n)&&(j-1>=0 && j+1<m)){
-                        int x = i-1;
-                        int y = j-1;
-                        for(;x<i+1;x++){
-                            for(;y<j+1;y++){
-                                if(arr[x][y]!='x')
-                                    hasEightN=false;
-                            }
-                        
-                        }
+                    if(i-1>=0 && j-1>=0)
+                    if(arr[i-1][j-1]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(i-1>=0)
+                    if(arr[i-1][j]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(i-1>=0 && j+1<m)
+                    if(arr[i-1][j+1]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(j-1>=0)
+                    if(arr[i][j-1]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(j+1<m)
+                    if(arr[i][j+1]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(j-1>=0 && i+1<n)
+                    if(arr[i+1][j-1]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(i+1<n)
+                    if(arr[i+1][j]!='x'){
+                        hasEightN=false;
+                        break;
+                    }
+                    if(i+1<n && j+1<m)
+                    if(arr[i+1][j+1]!='x'){
+                        hasEightN=false;
+                        break;
                     }
                 }
             }
         }
-        if(!((r-1>=0 && r+1<n) && (c-1>=0&&c+1<m)))
-            hasEightN=false;
         System.out.println(hasEightN==true?"yes":"no");
         sc.close();
     }
